@@ -96,7 +96,12 @@ body {
 
 .MainCompany .company_con .company_info {
     display: flex;
+    gap: 3rem;
     justify-content: space-between;
+}
+
+.MainCompany .company_con .company_info>* {
+    flex: auto;
 }
 
 .MainCompany .company_con .company_info .img_box {
@@ -108,18 +113,43 @@ body {
     order: 2;
 }
 
+.MainCompany .company_con .company_info .img_box img {
+    width: 100%
+}
+
 .MainCompany .company_con .company_info .txt_box {
-    padding: ;
+    padding: 8rem 5.6rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 9rem;
+
+}
+
+.MainCompany .company_con .company_info:nth-child(2) .txt_box {
+    background: var(--p_bg);
+    border: none;
 }
 
 .MainCompany .company_con .company_info h3 {
     font-size: 3.2rem;
     font-weight: 700;
-    line-height: 3.6rem;
+    line-height: 4rem;
 
     margin: 0 0 1.6rem 0;
 }
 
+.MainCompany .company_con .company_info p {
+    line-height: 2.4rem;
+}
+
 .MainCompany .company_con .company_info~.company_info {
     margin: 3.2rem 0 0 0;
+}
+
+
+.MainGlobal {
+    background: var(--p_bg) url(../images/main_global_bg.svg) no-repeat right top/20%;
+}
+
+.MainGlobal .title h2 {
+    line-height: 4.8rem;
 }
