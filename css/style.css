@@ -1,0 +1,125 @@
+:root {
+    --bc: #202123;
+    --wc: #ffffff;
+    --mc: #FFED00;
+    --sub_c: #DC2F34;
+    --bg: #f9f9f9;
+    --p_bg: #FFFDEB;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+#Header {}
+
+#Header .header_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 170rem;
+    width: 100%;
+    height: 10rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
+    color: var(--wc);
+}
+
+#Header .header_wrap h1 img {
+    width: 7.5rem;
+}
+
+#Header .header_wrap .gnb>ul {
+    display: flex;
+    gap: 4.5rem;
+
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+#Header .header_wrap .util {
+    display: flex;
+    gap: 4.5rem;
+}
+
+#Header .header_wrap .util>ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#Header .header_wrap .language span {
+    vertical-align: -0.7rem;
+}
+
+
+.MainVisual .visual_slide .itm {
+    height: 100vh;
+}
+
+.MainVisual .visual_slide .itm01 {
+    background: url(../images/main_slide02.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .visual_slide .itm02 {
+    background: url(../images/main_slide03.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .visual_slide .itm03 {
+    background: url(../images/main_slide04.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .visual_slide .itm04 {
+    background: url(../images/main_slide06.jpg) no-repeat center center/cover;
+}
+
+
+.MainCompany .title {
+    text-align: center;
+}
+
+.MainCompany .title h2 {
+    line-height: 4.8rem;
+}
+
+.MainCompany .company_con .company_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.MainCompany .company_con .company_info .img_box {
+    border-radius: 9rem;
+    overflow: hidden;
+}
+
+.MainCompany .company_con .company_info:nth-child(2) .img_box {
+    order: 2;
+}
+
+.MainCompany .company_con .company_info .txt_box {
+    padding: ;
+}
+
+.MainCompany .company_con .company_info h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+
+    margin: 0 0 1.6rem 0;
+}
+
+.MainCompany .company_con .company_info~.company_info {
+    margin: 3.2rem 0 0 0;
+}
