@@ -20,4 +20,5 @@ MAIN_ESG_CON.forEach((it) => {
 const MBTN = document.querySelector('.mbtn')
 MBTN.addEventListener('click', () => {
     document.querySelector('#Header .header_wrap .gnb').classList.toggle('on');
+    document.querySelector('#Header .header_wrap .util').classList.toggle('on');
 })
