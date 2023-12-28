@@ -28,13 +28,17 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    max-width: 170rem;
-    width: 100%;
     height: 10rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 6rem;
 
     color: var(--wc);
+}
+
+#Header .header_wrap.on {
+    background: var(--wc);
+    color: var(--bc);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #Header .header_wrap h1 img {
@@ -95,7 +99,7 @@ body {
     #Header .header_wrap .gnb {
         position: fixed;
         top: 0;
-        left: -990px;
+        left: -100%;
         bottom: 0;
 
         width: calc(100% - 10rem);
@@ -124,7 +128,7 @@ body {
     #Header .header_wrap .util {
         position: fixed;
         top: 50px;
-        right: 990px;
+        left: -100%;
         z-index: 999;
         transform: translate(0, -50%);
 
@@ -135,7 +139,7 @@ body {
     }
 
     #Header .header_wrap .util.on {
-        right: 10rem;
+        left: calc(100% - 40rem);
     }
 
     .mbtn {
@@ -151,6 +155,7 @@ body {
 
 
 .MainVisual .visual_slide .itm {
+    position: relative;
     height: 100vh;
 }
 
@@ -170,6 +175,32 @@ body {
     background: url(../images/main_slide06.jpg) no-repeat center center/cover;
 }
 
+.MainVisual .visual_slide .itm .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--wc);
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 1px 1px 0 var(--bc);
+}
+
+.MainVisual .visual_slide .itm .txt_box span {
+    display: block;
+    font-size: 5.6rem;
+    font-weight: 800;
+
+    margin: 0 0 1.6rem 0;
+}
+
+.MainVisual .visual_slide .itm .txt_box strong {
+    display: block;
+    font-size: 5.6rem;
+    font-weight: 800;
+}
+
 
 .MainCompany .title {
     text-align: center;
@@ -187,6 +218,8 @@ body {
 .MainCompany .company_con .company_info .img_box {
     border-radius: 5rem;
     overflow: hidden;
+
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .MainCompany .company_con .company_info:nth-child(2) .img_box {
@@ -194,14 +227,23 @@ body {
 }
 
 .MainCompany .company_con .company_info .img_box img {
-    width: 100%
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.MainCompany .company_con .company_info:hover .img_box img {
+    transform: scale(1.1);
 }
 
 .MainCompany .company_con .company_info .txt_box {
-    padding: 10rem 8rem;
+    padding: 8rem 5.6rem 5rem 5.6rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5rem;
     flex: 1;
+
+    word-break: keep-all;
 }
 
 .MainCompany .company_con .company_info:nth-child(2) .txt_box {
@@ -219,31 +261,112 @@ body {
 
 .MainCompany .company_con .company_info p {
     line-height: 2rem;
+    margin: 0 0 6.4rem 0;
 }
 
 .MainCompany .company_con .company_info~.company_info {
     margin: 3.2rem 0 0 0;
 }
 
+@media (max-width: 786px) {
+    .MainCompany .title h2 {
+        line-height: calc(5vw + 8px);
+    }
+
+    .MainCompany .company_con .company_info {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .MainCompany .company_con .company_info .img_box {
+        height: 45rem;
+    }
+
+    .MainCompany .company_con .company_info:hover .img_box img {
+        transform: none;
+    }
+
+    .MainCompany .company_con .company_info:nth-child(2) .img_box {
+        order: 1;
+    }
+
+    .MainCompany .company_con .company_info:nth-child(2) .txt_box {
+        order: 2;
+    }
+
+    .MainCompany .company_con .company_info .txt_box {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .MainCompany .company_con .company_info:nth-child(2) .txt_box {
+        background: none;
+        border: none;
+    }
+
+    .MainCompany .company_con .company_info h3 {
+        font-size: 4vw;
+        font-weight: 700;
+        line-height: calc(4vw + 8px);
+        margin: 0 0 0.8rem 0;
+    }
+
+    .MainCompany .company_con .company_info p {
+        line-height: 2rem;
+        margin: 0 0 1.6rem 0;
+    }
+
+    .MainCompany .company_con .company_info h3 .respon_pc {
+        display: none;
+    }
+}
+
+
 
 .MainGlobal {
-    background: var(--p_bg) url(../images/main_global_bg.svg) no-repeat right top;
+    background: var(--p_bg) url(../images/main_global_bg.svg) no-repeat right top/40%;
 }
 
 .MainGlobal .global_con strong {
     display: block;
-    font-size: 2rem;
+    font-size: 3.2rem;
     font-weight: 600;
-    margin: 0 0 0.8rem 0;
+    margin: 0 0 0.4rem 0;
 }
 
 .MainGlobal .global_con span {
-    display: block;
+    display: inline-block;
     font-size: 5.6rem;
     font-weight: 800;
-    margin: 0 0 1.6rem 0;
+    margin: 0 0.8rem 1.6rem 0;
 
     text-indent: -3px;
+}
+
+.MainGlobal .global_con p {
+    word-break: keep-all;
+    line-height: 2rem;
+    margin: 0 0 8rem 0;
+}
+
+@media (max-width: 786px) {
+    .MainGlobal {
+        background: var(--p_bg);
+    }
+
+    .MainGlobal .global_con strong {
+        display: block;
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0 0 0.8rem 0;
+    }
+
+    .MainGlobal .global_con p {
+        word-break: keep-all;
+        line-height: 2rem;
+    }
 }
 
 
@@ -325,18 +448,22 @@ body {
 }
 
 .MainESG .ESG_con .content01 {
-    background: url(../images/main_esg1.jpg) no-repeat center center/cover;
+    background: url(../images/main_esg1.jpg) no-repeat left center;
 }
 
 .MainESG .ESG_con .content02 {
-    background: url(../images/main_esg2.jpg) no-repeat center center/cover;
+    background: url(../images/main_esg2.jpg) no-repeat left top;
 }
 
 .MainESG .ESG_con .content03 {
-    background: url(../images/main_esg3.jpg) no-repeat center center/cover;
+    background: url(../images/main_esg3.jpg) no-repeat left center;
 }
 
 @media (max-width: 786px) {
+    .MainESG .title h2 {
+        line-height: calc(5vw + 8px);
+    }
+
     .MainESG .ESG_con {
         display: block;
     }
@@ -366,6 +493,18 @@ body {
         opacity: 1;
         visibility: visible;
         transition: none;
+    }
+
+    .MainESG .ESG_con .content01 {
+        background: url(../images/main_esg1.jpg) no-repeat center center;
+    }
+
+    .MainESG .ESG_con .content02 {
+        background: url(../images/main_esg2.jpg) no-repeat center top;
+    }
+
+    .MainESG .ESG_con .content03 {
+        background: url(../images/main_esg3.jpg) no-repeat center center;
     }
 }
 
