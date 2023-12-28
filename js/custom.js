@@ -7,9 +7,40 @@ window.addEventListener('scroll', () => {
     }
 })
 
+
 const VISUAL_SLIDE = new Swiper('.visual_slide', {
     loop: true,
+    autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+    },
+
+    // slideActiveClass: 'on',
+    // on: {
+    //     init: function () {
+
+    //     }
+    // }
 });
+
+const MAIN_SLIDE_PREV = document.querySelector('.MainVisual .control_box .left')
+const MAIN_SLIDE_NEXT = document.querySelector('.MainVisual .control_box .right')
+MAIN_SLIDE_PREV.addEventListener('click', function () {
+    VISUAL_SLIDE.slidePrev();
+})
+MAIN_SLIDE_NEXT.addEventListener('click', function () {
+    VISUAL_SLIDE.slideNext();
+})
+
+const MAIN_SLIDE_PAUSE = document.querySelector('.MainVisual .control_box .pause')
+MAIN_SLIDE_PAUSE.addEventListener('click', function () {
+    this.classList.toggle('on');
+    if (this.classList.contains('on')) {
+        VISUAL_SLIDE.autoplay.stop();
+    } else {
+        VISUAL_SLIDE.autoplay.start();
+    }
+})
 
 const MAIN_ESG_CON = document.querySelectorAll('.MainESG .ESG_con .con_box');
 MAIN_ESG_CON.forEach((it) => {

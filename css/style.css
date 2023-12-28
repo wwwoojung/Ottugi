@@ -153,6 +153,9 @@ body {
     }
 }
 
+.MainVisual .visual_slide {
+    position: relative;
+}
 
 .MainVisual .visual_slide .itm {
     position: relative;
@@ -189,17 +192,119 @@ body {
 
 .MainVisual .visual_slide .itm .txt_box span {
     display: block;
-    font-size: 5.6rem;
+    font-size: 6.4rem;
     font-weight: 800;
 
     margin: 0 0 1.6rem 0;
+
+    transform: translate(0, 3rem);
+    opacity: 0;
 }
 
 .MainVisual .visual_slide .itm .txt_box strong {
     display: block;
-    font-size: 5.6rem;
+    font-size: 6.4rem;
     font-weight: 800;
+    transform: translate(0, 3rem);
+
+    transform: translate(0, 3rem);
+    opacity: 0;
 }
+
+.MainVisual .visual_slide .itm.swiper-slide-active .txt_box span {
+    transform: translate(0, 0);
+    opacity: 1;
+
+    transition: 1s;
+}
+
+.MainVisual .visual_slide .itm.swiper-slide-active .txt_box strong {
+    transform: translate(0, 0);
+    opacity: 1;
+
+    transition: 1s 0.5s;
+}
+
+.MainVisual .visual_slide .control_box {
+    position: absolute;
+    bottom: 15.6rem;
+    left: 50%;
+    z-index: 998;
+
+    transform: translate(-50%, 0);
+
+    max-width: 144rem;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+.MainVisual .visual_slide .control_box .control_btn {
+    display: flex;
+    justify-content: end;
+    gap: 0.4rem;
+}
+
+.MainVisual .visual_slide .control_box .control_btn span {
+    font-size: 3.2rem;
+    color: var(--wc);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.6rem;
+
+    cursor: pointer;
+}
+
+.MainVisual .scroll {
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 998;
+
+    color: var(--wc);
+}
+
+.MainVisual .scroll::before {
+    content: "";
+    position: absolute;
+    top: 2.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 4rem;
+    height: 6rem;
+
+    border: 1px solid var(--wc);
+    border-radius: 2rem;
+
+    animation: scroll_down 1s infinite;
+}
+
+.MainVisual .scroll::after {
+    content: "";
+    position: absolute;
+    top: 3.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 0.1rem;
+    height: 1rem;
+
+    background: var(--wc);
+    animation: scroll_down 1s infinite;
+}
+
+@keyframes scroll_down {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 2rem);
+    }
+}
+
+@media (max-width: 786px) {}
+
 
 
 .MainCompany .title {
