@@ -7,6 +7,10 @@
     --p_bg: #FFFDEB;
 }
 
+/* * {
+    outline: 1px solid tomato;
+} */
+
 html {
     font-size: 10px;
 }
@@ -184,6 +188,10 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 
+    max-width: 144rem;
+    width: 100%;
+    padding: 0 1.5rem;
+
     color: var(--wc);
     text-align: center;
     white-space: nowrap;
@@ -192,8 +200,8 @@ body {
 
 .MainVisual .visual_slide .itm .txt_box span {
     display: block;
-    font-size: 6.4rem;
-    font-weight: 800;
+    font-size: 4.8rem;
+    font-weight: 700;
 
     margin: 0 0 1.6rem 0;
 
@@ -203,31 +211,34 @@ body {
 
 .MainVisual .visual_slide .itm .txt_box strong {
     display: block;
-    font-size: 6.4rem;
-    font-weight: 800;
+    font-size: 4.8rem;
+    font-weight: 700;
     transform: translate(0, 3rem);
 
     transform: translate(0, 3rem);
     opacity: 0;
 }
 
-.MainVisual .visual_slide .itm.swiper-slide-active .txt_box span {
+.MainVisual .visual_slide .itm.on .txt_box span {
     transform: translate(0, 0);
     opacity: 1;
 
-    transition: 1s;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
 }
 
-.MainVisual .visual_slide .itm.swiper-slide-active .txt_box strong {
+.MainVisual .visual_slide .itm.on .txt_box strong {
     transform: translate(0, 0);
     opacity: 1;
 
-    transition: 1s 0.5s;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
 }
 
 .MainVisual .visual_slide .control_box {
     position: absolute;
-    bottom: 15.6rem;
+    bottom: 13.2rem;
     left: 50%;
     z-index: 998;
 
@@ -246,11 +257,37 @@ body {
 
 .MainVisual .visual_slide .control_box .control_btn span {
     font-size: 3.2rem;
+    font-weight: 300;
     color: var(--wc);
     background: rgba(0, 0, 0, 0.3);
-    padding: 1.6rem;
+    padding: 1.2rem;
 
     cursor: pointer;
+}
+
+.MainVisual .visual_slide .slide_num {
+    position: absolute;
+    top: 13.2rem;
+    left: 50%;
+    z-index: 998;
+
+    transform: translate(-50%, 0);
+
+    max-width: 144rem;
+    width: 100%;
+    padding: 0 1.5rem;
+
+    text-align: right;
+    color: var(--wc);
+    font-size: 2rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 0 var(--bc);
+}
+
+.MainVisual .visual_slide .slide_num span {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: var(--mc);
 }
 
 .MainVisual .scroll {
@@ -270,8 +307,8 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
 
-    width: 4rem;
-    height: 6rem;
+    width: 3rem;
+    height: 4.5rem;
 
     border: 1px solid var(--wc);
     border-radius: 2rem;
@@ -287,7 +324,7 @@ body {
     transform: translate(-50%, 0);
 
     width: 0.1rem;
-    height: 1rem;
+    height: 0.8rem;
 
     background: var(--wc);
     animation: scroll_down 1s infinite;
@@ -299,11 +336,65 @@ body {
     }
 
     100% {
-        transform: translate(-50%, 2rem);
+        transform: translate(-50%, 3rem);
     }
 }
 
-@media (max-width: 786px) {}
+@media (max-width: 786px) {
+    .MainVisual .visual_slide .itm01 {
+        background: url(../images/main_slide_respon02.jpg) no-repeat center center/cover;
+    }
+
+    .MainVisual .visual_slide .itm02 {
+        background: url(../images/main_slide_respon03.jpg) no-repeat center center/cover;
+    }
+
+    .MainVisual .visual_slide .itm03 {
+        background: url(../images/main_slide_respon04.jpg) no-repeat center center/cover;
+    }
+
+    .MainVisual .visual_slide .itm04 {
+        background: url(../images/main_slide_respon06.jpg) no-repeat center center/cover;
+    }
+
+    .MainVisual .visual_slide .itm .txt_box span {
+        font-size: 6vw;
+    }
+
+    .MainVisual .visual_slide .itm .txt_box strong {
+        font-size: 6vw;
+    }
+
+    .MainVisual .visual_slide .control_box {
+        bottom: 5.2rem;
+    }
+
+    .MainVisual .visual_slide .control_box .control_btn {
+        justify-content: center;
+    }
+
+    .MainVisual .visual_slide .slide_num {
+        display: none;
+    }
+
+    .MainVisual .scroll {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 998;
+
+        color: var(--wc);
+    }
+
+    .MainVisual .scroll::before {
+        display: none;
+    }
+
+    .MainVisual .scroll::after {
+        display: none;
+    }
+}
 
 
 

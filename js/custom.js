@@ -15,12 +15,17 @@ const VISUAL_SLIDE = new Swiper('.visual_slide', {
         disableOnInteraction: false,
     },
 
-    // slideActiveClass: 'on',
-    // on: {
-    //     init: function () {
+    slideActiveClass: 'on',
 
-    //     }
-    // }
+    on: {
+        init: function () {
+        },
+        slideChangeTransitionEnd: function () {
+            console.log(this.realIndex);
+            document.querySelector('.slide_num span').innerHTML = `0${this.realIndex + 1}`;
+        }
+    }
+
 });
 
 const MAIN_SLIDE_PREV = document.querySelector('.MainVisual .control_box .left')
